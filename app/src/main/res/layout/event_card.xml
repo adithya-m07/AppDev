@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:background="@color/textLight"
+                                                   android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+            android:layout_width="50dp" android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="@+id/event_image"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="@+id/event_image"
+            android:layout_marginStart="8dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/month"
+                      android:text="NOV" android:layout_gravity="center" android:textSize="12sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="20sp"
+                      android:id="@+id/date"
+                      android:textStyle="bold"
+                      android:layout_gravity="center"
+                      android:text="16"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView android:layout_width="150dp" android:layout_height="150dp"
+               android:id="@+id/event_image" app:layout_constraintEnd_toEndOf="parent"
+               android:scaleType="centerCrop"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
+               app:layout_constraintVertical_bias="0.0" android:layout_marginTop="16dp"
+               android:layout_marginStart="16dp"/>
+
+    <TextView android:layout_width="180dp" android:layout_height="wrap_content"
+              android:layout_marginStart="16dp"
+              android:text="@string/event_locn"
+              app:layout_constraintStart_toEndOf="@+id/event_image"
+              app:layout_constraintTop_toTopOf="parent"
+              android:textStyle="bold"
+              android:layout_marginTop="16dp" android:id="@+id/event_name"/>
+
+    <TextView android:layout_width="180dp" android:layout_height="wrap_content" android:id="@+id/event_location"
+              android:text="@string/venue"
+              android:layout_marginStart="18dp"
+              app:layout_constraintStart_toEndOf="@+id/event_image" android:layout_marginTop="13dp"
+              app:layout_constraintTop_toBottomOf="@+id/event_name"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:text="Rs 1000"
+              app:layout_constraintBottom_toBottomOf="parent"
+              android:layout_marginBottom="20dp" android:layout_marginStart="16dp"
+              app:layout_constraintStart_toEndOf="@+id/event_image" android:id="@+id/price"/>
+
+    <Button android:layout_width="wrap_content" android:layout_height="30dp"
+            android:background="@drawable/round_button" android:textColor="@color/textLight"
+            android:text="@string/book_now"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginBottom="20dp" android:id="@+id/book_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

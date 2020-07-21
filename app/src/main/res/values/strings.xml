@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppDevRound2</string>
+    <string name="slideshow_image_desc">Images displayed at top</string>
+    <string name="book_now">Book Now</string>
+    <string name="event_locn">The NCPA National Jazz festival- The Latination and Kevin Davy Quintet</string>
+    <string name="venue">Tata Theater The NCPA</string>
+</resources>
