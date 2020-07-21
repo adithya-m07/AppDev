@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity  {
 
     private int likes = 1000;
 
+    private boolean wasOn;
+
 
 
     @Override
@@ -53,7 +55,14 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView slideshow = (RecyclerView) findViewById(R.id.slideshow_adapter);
+        if(savedInstanceState!=null){
+            likes = savedInstanceState.getInt("likes");
+            wasOn = savedInstanceState.getBoolean("wasOn");
+            ToggleButton toggleButton = findViewById(R.id.heart_button);
+            toggleButton.setChecked(wasOn);
+        }
+
+        RecyclerView slideshow = findViewById(R.id.slideshow_adapter);
         LinearLayoutManager slideshowLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         slideshow.setLayoutManager(slideshowLayoutManager);
         RecyclerView.Adapter slideshowAdapter = new SlideshowAdapter(slideImageList,getResources());
@@ -65,7 +74,7 @@ public class MainActivity extends AppCompatActivity  {
         SnapHelper snapHelper = new LinearSnapHelper();
         snapHelper.attachToRecyclerView(slideshow);
 
-       RecyclerView event = (RecyclerView) findViewById(R.id.event_list_adapter);
+       RecyclerView event = findViewById(R.id.event_list_adapter);
         LinearLayoutManager eventLayoutManager = new LinearLayoutManager(this);
         event.setLayoutManager(eventLayoutManager);
         RecyclerView.Adapter eventAdapter = new EventListAdapter(eventImageList,eventName,eventDisc,date,price, getResources());
@@ -90,10 +99,12 @@ public class MainActivity extends AppCompatActivity  {
         if(on){
             likes+=1;
             textView.setText(String.valueOf(likes));
+            wasOn = true;
         }
         else{
             likes-=1;
             textView.setText(String.valueOf(likes));
+            wasOn = false;
         }
     }
 
@@ -102,6 +113,14 @@ public class MainActivity extends AppCompatActivity  {
         share.setType("text/plain");
         startActivity(Intent.createChooser(share,"Share"));
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putInt("likes", likes);
+        savedInstanceState.putBoolean("wasOn",wasOn);
+    }
+
+
 
 
 }

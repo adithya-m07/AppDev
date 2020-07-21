@@ -61,7 +61,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/slideshow_adapter"
                     android:textOn="" android:textOff="" android:text=""
                     app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/heart_button"
-                    app:layout_constraintEnd_toStartOf="@+id/hearts" android:layout_marginEnd="5dp"/>
+                    app:layout_constraintEnd_toStartOf="@+id/hearts" android:layout_marginEnd="5dp"
+                    app:layout_constraintVertical_bias="0.3"/>
 
 
             <TextView android:layout_width="wrap_content"
@@ -71,8 +72,8 @@
                       app:layout_constraintTop_toBottomOf="@+id/slideshow_adapter"
                       android:id="@+id/hearts"
                       app:layout_constraintBottom_toBottomOf="parent"
-                      app:layout_constraintVertical_bias="0.428" app:layout_constraintEnd_toStartOf="@+id/imageButton"
-                      android:layout_marginEnd="10dp"/>
+                      app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                      android:layout_marginEnd="10dp" app:layout_constraintVertical_bias="0.41000003"/>
 
             <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
                          android:onClick="onShare"
